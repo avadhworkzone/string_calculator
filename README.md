@@ -1,16 +1,33 @@
-# string_calculator
+# String Calculator
 
-A new Flutter project.
+TDD implementation of String Calculator kata for Incubyte assessment.
 
-## Getting Started
+## Requirements
 
-This project is a starting point for a Flutter application.
+- Empty string returns 0
+- Single number returns itself
+- Multiple comma-separated numbers return sum
+- Handle newlines as delimiters
+- Support custom delimiters: `//;\n1;2`
+- Throw exception for negative numbers
 
-A few resources to get you started if this is your first Flutter project:
+## Usage
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```dart
+final calculator = StringCalculator();
+calculator.add("");        // 0
+calculator.add("1");       // 1
+calculator.add("1,2");     // 3
+calculator.add("1\n2,3");  // 6
+calculator.add("//;\n1;2"); // 3
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Run Tests
+
+```bash
+flutter test
+```
+
+## TDD Process
+
+This implementation follows strict TDD discipline with RED-GREEN cycles visible in commit history. Each commit shows one small step in the TDD process.
